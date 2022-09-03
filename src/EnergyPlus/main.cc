@@ -46,8 +46,10 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #include <EnergyPlus/api/EnergyPlusPgm.hh>
+#include <iostream>
 
 int main(int argc, const char *argv[])
 {
+    std::cout << "What is up Krishna? This E+ talking back to you during simulation. HOW COOL IS THAT!"
     return EnergyPlusPgm(argc, argv);
 }
