@@ -50,6 +50,6 @@
 
 int main(int argc, const char *argv[])
 {
-    std::cout << "What is up Krishna? This E+ talking back to you during simulation. HOW COOL IS THAT!"
+    std::cout << "What is up Krishna? This E+ talking back to you during simulation. HOW COOL IS THAT!";
     return EnergyPlusPgm(argc, argv);
 }
