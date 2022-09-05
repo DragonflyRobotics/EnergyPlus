@@ -2,8 +2,12 @@ name: Windows Releases
 
 on:
   push:
+    branches: [ develop ]
+    # Sequence of patterns matched against refs/tags
     tags:
-      - '*'
+      - 'v*' # Push events matching v*, i.e. v1.0, v20.15.10
+  pull_request:
+    branches: [ develop ]
 
 env:
   CMAKE_Fortran_COMPILER: "/c/msys64/mingw64/bin/x86_64-w64-mingw32-gfortran.exe"
