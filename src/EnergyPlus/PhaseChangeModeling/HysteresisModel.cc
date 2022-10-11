@@ -364,6 +364,7 @@ namespace HysteresisPhaseChange {
             // now build out a new hysteresis instance and add it to the vector
             HysteresisPhaseChange thisHM;
             thisHM.name = state.dataIPShortCut->cAlphaArgs(1);
+            thisHM.dataMaterialGroup = DataHeatBalance::MaterialGroup::HysteresisPhaseChange;
             thisHM.totalLatentHeat = state.dataIPShortCut->rNumericArgs(1);
             thisHM.fullyLiquidThermalConductivity = state.dataIPShortCut->rNumericArgs(2);
             thisHM.fullyLiquidDensity = state.dataIPShortCut->rNumericArgs(3);
@@ -379,10 +380,9 @@ namespace HysteresisPhaseChange {
             thisHM.deltaTempFreezingLow = state.dataIPShortCut->rNumericArgs(13);
             thisHM.specHeatTransition = (thisHM.specificHeatSolid + thisHM.specificHeatLiquid) / 2.0;
             thisHM.CpOld = thisHM.specificHeatSolid;
-            thisHM.
             state.dataHysteresisPhaseChange->hysteresisPhaseChangeModels.push_back(thisHM);
 
-                    std::cout << state.dataMaterial->Material(state.dataConstruction->Construct(ConstrNum).LayerPoint(1)).Group == DataHeatBalance::MaterialGroup::HysteresisPhaseChange
+//                    // std::cout << state.dataMaterial->Material(state.dataConstruction->Construct(ConstrNum).LayerPoint(1)).Group == DataHeatBalance::MaterialGroup::HysteresisPhaseChange
         }
     }
 

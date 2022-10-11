@@ -87,6 +87,7 @@ namespace HysteresisPhaseChange {
     public:
         // members are pretty much all accessed outside of the class in one way or another (by the static factory, etc.)
         std::string name;
+        std::string dataMaterialGroup; // New property that I added
         Real64 enthalpyM;
         Real64 enthalpyF;
 
