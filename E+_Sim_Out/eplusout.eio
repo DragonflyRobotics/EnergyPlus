@@ -1,0 +1,112 @@
+Program Version,EnergyPlus, Version 22.2.0-7ff1ca9a23, YMD=2022.10.10 21:05
+! <Version>, Version ID
+ Version, 22.2
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour, 20,  3
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 1, 20, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, No, Yes, Yes, No
+! <Performance Precision Tradeoffs>, Use Coil Direct Simulation, Zone Radiant Exchange Algorithm, Override Mode, Number of Timestep In Hour, Force Euler Method, Minimum Number of Warmup Days, Force Suppress All Begin Environment Resets, Minimum System Timestep, MaxZoneTempDiff, MaxAllowedDelTemp
+ Performance Precision Tradeoffs, No, ScriptF, Normal, 20, No, 1, No, 1.0, 0.300, 2.0000E-003
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.200, 0.200, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,  10.86,  10.57,  11.08,  11.88,  13.97,  15.58,  16.67,  17.00,  16.44,  15.19,  13.51,  11.96
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,San Francisco Intl Ap CA USA TMY3 WMO#=724940,37.62,-122.40,-8.00,2.00,101301,1.2040
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,Correlation,NA,23.78,23.90,NA
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,SF+CZ2BWH+USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780+hp+slab+IECC_2015,0.000,Suburbs,4.00000E-002,0.40000,FullExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,DOE-2
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing and Return {AdjustMixingOnly | AdjustReturnOnly | AdjustMixingThenReturn | AdjustReturnThenMixing | None}, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.220,370.000,6.500000E-003
+! <Material Details>,Material Name,ThermalResistance {m2-K/w},Roughness,Thickness {m},Conductivity {w/m-K},Density {kg/m3},Specific Heat {J/kg-K},Absorptance:Thermal,Absorptance:Solar,Absorptance:Visible
+! <Material:Air>,Material Name,ThermalResistance {m2-K/w}
+ Material Details,SHEATHING_CONSOL_LAYER,0.1351,Rough,1.2700E-002,9.402E-002,685.008,1172.332,0.9000,0.7000,0.7000
+ Material Details,CEIL_CONSOL_LAYER,5.5153,Rough,0.3404,6.172E-002,41.929,776.251,0.9000,0.7000,0.7000
+ Material Details,FLOOR_CONSOL_LAYER,1.9128,Rough,8.8900E-002,4.648E-002,55.074,916.931,0.9000,0.7000,0.7000
+ Material Details,BSMTWALL_CONSOL_LAYER,2.3423E-005,Rough,2.5400E-004,10.844,120.801,1036.258,0.9000,0.7000,0.7000
+ Material Details,CRAWLWALL_CONSOL_LAYER,2.3423E-005,Rough,2.5400E-004,10.844,120.801,1036.258,0.9000,0.7000,0.7000
+ Material Details,ENKOAT,6.3500E-002,Smooth,1.2700E-002,0.200,900.000,2950.000,0.9000,0.6000,0.6000
+ Material Details,PLASTERBOARD-1,7.5000E-002,MediumSmooth,1.2000E-002,0.160,950.000,840.000,0.9000,0.6000,0.6000
+ Material Details,FIBERGLASS QUILT-1,1.6500,Rough,6.6000E-002,4.000E-002,12.000,840.000,0.9000,0.6000,0.6000
+ Material Details,WOOD SIDING-1,6.4286E-002,Rough,9.0000E-003,0.140,530.000,900.000,0.9000,0.6000,0.6000
+ Material Details,PLASTERBOARD-2,6.2500E-002,Rough,1.0000E-002,0.160,950.000,840.000,0.9000,0.6000,0.6000
+ Material Details,FIBERGLASS QUILT-2,2.7950,Rough,0.1118,4.000E-002,12.000,840.000,0.9000,0.6000,0.6000
+ Material Details,ROOF DECK,0.1357,Rough,1.9000E-002,0.140,530.000,900.000,0.9000,0.6000,0.6000
+ Material Details,WALL_CONSOL_LAYER,1.5339,Rough,8.8900E-002,5.796E-002,120.801,1036.258,0.9000,0.7000,0.7000
+ Material Details,VERY HIGH REFLECTIVITY SURFACE,2.1097E-004,Smooth,5.0000E-004,2.370,2702.000,903.000,0.9000,5.0000E-002,5.0000E-002
+ Material Details,GYPSUMBOARD-5/16IN,5.0054E-002,Rough,7.9395E-003,0.159,640.000,1129.600,0.9000,0.4000,0.1000
+ Material Details,COPPERPIPE,4.7506E-003,MediumRough,1.9050E-002,4.010,2243.000,837.000,0.9000,0.6500,0.6500
+ Material Details,F08 METAL SURFACE,1.7668E-005,Smooth,8.0000E-004,45.280,7824.000,500.000,0.9000,0.7000,0.7000
+ Material Details,CONCRETE_4IN,7.7356E-002,Rough,0.1015,1.312,2242.800,465.200,0.9000,0.7000,0.7000
+ Material Details,ASPHALT_SHINGLE,7.7448E-002,MediumRough,6.3399E-003,8.186E-002,1121.292,1255.200,0.9000,0.7500,0.7000
+ Material Details,WOOD_SHINGLE,0.1115,MediumSmooth,1.2700E-002,0.114,426.091,1631.760,0.9000,0.7000,0.7000
+ Material Details,SLATE_SHINGLE,8.8061E-003,MediumSmooth,1.2700E-002,1.442,1601.845,1255.200,0.9000,0.7000,0.7000
+ Material Details,CEMENT_STUCCO,2.6422E-002,MediumSmooth,1.9050E-002,0.721,1865.580,878.640,0.9000,0.7000,0.7000
+ Material Details,SYN_STUCCO,3.5237E-002,MediumSmooth,3.0480E-003,8.650E-002,400.000,878.640,0.9000,0.7000,0.7000
+ Material Details,DRYWALL_1/2IN,7.9331E-002,MediumSmooth,1.2700E-002,0.160,800.923,1087.840,0.9000,0.7000,0.7000
+ Material Details,OSB_5/8IN,0.1365,MediumSmooth,1.5875E-002,0.116,544.627,1213.360,0.9000,0.7000,0.7000
+ Material Details,OSB_7/16IN,9.5550E-002,MediumSmooth,1.1113E-002,0.116,544.627,1213.360,0.9000,0.7000,0.7000
+ Material Details,BLOWN_R30,5.1614,MediumRough,0.2126,4.119E-002,9.611,836.800,0.9000,0.7000,0.7000
+ Material Details,BLOWN_R30_TOP,2.8489,MediumRough,0.1173,4.119E-002,9.611,836.800,0.9000,0.7000,0.7000
+ Material Details,PLYWOOD_3/4IN,0.1650,Rough,1.9050E-002,0.115,544.680,674.540,0.9000,0.7000,0.7000
+ Material Details,BATT_R19,7.3089,MediumRough,2.5400E-002,3.475E-003,9.611,836.800,0.9000,0.7000,0.7000
+ Material Details,LUMBER_2X4,0.7709,Rough,8.9002E-002,0.115,512.640,767.580,0.9000,0.7000,0.7000
+ Material Details,CARPET_N_PAD,0.4224,MediumSmooth,2.5400E-002,6.013E-002,32.037,836.800,0.9000,0.7000,0.7000
+ Material Details,BATT_R13,2.2936,MediumRough,8.8900E-002,3.876E-002,9.611,836.800,0.9000,0.7000,0.7000
+ Material Details,OSB_1/2IN,0.1092,MediumSmooth,1.2700E-002,0.116,544.627,1213.360,0.9000,0.7000,0.7000
+ Material Details,SOIL_12IN,0.1761,Rough,0.3048,1.731,1842.300,232.600,0.9000,0.7000,0.7000
+ Material Details,DOOR_CONST,0.4402,Smooth,3.1702E-002,7.201E-002,512.640,767.580,0.9000,0.7000,0.7000
+ Material Details,GYP_BOARD_1/2IN,8.0130E-002,Rough,1.2710E-002,0.159,640.000,1129.600,0.9000,0.4000,0.1000
+ Material Details,STD WOOD 6INCH,1.2500,MediumSmooth,0.1500,0.120,540.000,1210.000,0.9000,0.7000,0.7000
+ Material Details,PIPE INSULATION,0.3830,VeryRough,1.2703E-002,3.317E-002,91.000,836.000,0.9000,0.5000,0.5000
+ Material Details,MANF_WALL_AIRGAP,0.1200,Smooth,0.0000,0.000,0.000,0.000,0.9000,0.7000,0.7000
+ Material Details,BLDG_PAPER_FELT,1.0567E-002,Smooth,0.0000,0.000,0.000,0.000,0.9000,0.7000,0.7000
+ Material Details,R_HIGH,177.0000,MediumRough,0.0000,0.000,0.000,0.000,0.9000,0.7000,0.7000
+ Material:Air,AIR_4_IN_VERT,0.1585
+ Material:Air,3/4IN_AIR_SPACE,8.5130E-002
+ Material:Air,3/4IN_REFLECTIVE_AIR_SPACE,0.2466
+ Material Details,CLEAR ACRYLIC PLASTIC,3.3333E-003,VerySmooth,3.0000E-003,0.900,0.000,0.000,0.9000,0.0000,0.0000
+ Material Details,DIFFUSING ACRYLIC PLASTIC,2.4444E-003,VerySmooth,2.2000E-003,0.900,0.000,0.000,0.9000,0.0000,0.0000
+ Material Details,INT_BLIND,0.0000,Rough,0.0000,0.000,0.000,0.000,0.0000,0.0000,0.0000
+ Material Details,GLASS,0.2680,VerySmooth,3.2497E-002,0.121,0.000,0.000,0.8400,0.0000,0.0000
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,LowerLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Other Side Coefficients>,Name,Combined convective/radiative film coefficient {W/m2-K},User selected Constant Temperature {C},Coefficient modifying the constant temperature term,Coefficient modifying the external dry bulb temperature term,Coefficient modifying the ground temperature term,Coefficient modifying the wind speed term {s/m},Coefficient modifying the zone air temperature term,Constant Temperature Schedule Name,Sinusoidal Variation,Period of Sinusoidal Variation,Previous Other Side Temperature Coefficient,Minimum Other Side Temperature {C},Maximum Other Side Temperature {C}
+Other Side Coefficients,SURFPROPOTHSDCOEFSLABAVERAGE,N/A,N/A,1.000,0.000,0.000,0.000,0.000,SCHEDULEOSCSLABAVERAGESURFACETEMP,NO,24.000,0.000,N/A,N/A
+Other Side Coefficients,SURFPROPOTHSDCOEFSLABPERIMETER,N/A,N/A,1.000,0.000,0.000,0.000,0.000,SCHEDULEOSCSLABPERIMETERTEMP,NO,24.000,0.000,N/A,N/A
+Other Side Coefficients,SURFPROPOTHSDCOEFSLABCORE,N/A,N/A,1.000,0.000,0.000,0.000,0.000,SCHEDULEOSCSLABCORETEMP,NO,24.000,0.000,N/A,N/A

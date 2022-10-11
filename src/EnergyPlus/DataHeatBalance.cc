@@ -279,6 +279,7 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
         case DataHeatBalance::MaterialGroup::ScreenEquivalentLayer:
         case DataHeatBalance::MaterialGroup::BlindEquivalentLayer:
         case DataHeatBalance::MaterialGroup::GapEquivalentLayer:
+        case DataHeatBalance::MaterialGroup::HysteresisPhaseChange:
             state.dataConstruction->Construct(ConstrNum).TypeIsWindow = true;
             break;
         case DataHeatBalance::MaterialGroup::Invalid:

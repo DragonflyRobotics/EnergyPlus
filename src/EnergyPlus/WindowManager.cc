@@ -51,6 +51,7 @@
 #include <cmath>
 #include <memory>
 #include <string>
+#include <iostream>
 
 // ObjexxFCL Headers
 #include <ObjexxFCL/Array.functions.hh>
@@ -7733,6 +7734,9 @@ namespace WindowManager {
                                   GasTypeName(state.dataMaterial->Material(Layer).GasType(1)),
                                   state.dataMaterial->Material(Layer).Thickness,
                                   GapVentType);
+                        } break;
+                        case DataHeatBalance::MaterialGroup::HysteresisPhaseChange: {
+                            std::cout << "PCM Special WARNING!!!!!!!!!!!!!!!!!!!!!!==========================================";
                         } break;
                         default:
                             break;

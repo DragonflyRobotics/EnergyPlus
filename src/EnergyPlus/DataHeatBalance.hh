@@ -90,6 +90,7 @@ namespace DataHeatBalance {
     {
         Invalid = -1,
         RegularMaterial,
+        HysteresisPhaseChange,
         Air,
         Shade,
         WindowGlass,

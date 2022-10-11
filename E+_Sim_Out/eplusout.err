@@ -1,0 +1,22 @@
+Program Version,EnergyPlus, Version 22.2.0-7ff1ca9a23, YMD=2022.10.10 21:05,
+   ** Warning ** Output:PreprocessorMessage="GroundTempCalc - Slab" has the following Warning condition:
+   **   ~~~   ** Slab thickness [0.100 m] reset to 0.123 m  for computational stability.
+   ** Warning ** Timestep: Requested number (12) cannot be used when Conduction Finite Difference algorithm is selected.
+   **   ~~~   ** ...Timestep is set to 20.
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
+   **   ~~~   ** ..Location object=PHOENIX SKY HARBOR INTL AP_AZ_USA DESIGN_CONDITIONS
+   **   ~~~   ** ..Weather File Location=San Francisco Intl Ap CA USA TMY3 WMO#=724940
+   **   ~~~   ** ..due to location differences, Latitude difference=[4.17] degrees, Longitude difference=[10.42] degrees.
+   **   ~~~   ** ..Time Zone difference=[1.0] hour(s), Elevation difference=[99.41] percent, [335.00] meters.
+   ** Warning ** ProcessScheduleInput: Schedule:Compact="TWOSEASONSCHEDULE", Schedule Type Limits Name="NUMBER" not found -- will not be validated
+   ** Severe  ** Error: Window construction=INTERIOR WINDOW has materials other than glass, gas, shade, screen, blind, complex shading, complex gap, or simple system.
+   **  Fatal  ** GetSurfaceData: Errors discovered, program terminates.
+   ...Summary of Errors that led to program termination:
+   ..... Reference severe error count=1
+   ..... Last severe error=Error: Window construction=INTERIOR WINDOW has materials other than glass, gas, shade, screen, blind, complex shading, complex gap, or simple system.
+   ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).
+   ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 2 Warning; 1 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 4 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  3.73sec
