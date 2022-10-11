@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-7ff1ca9a23, YMD=2022.10.10 21:05,
+Program Version,EnergyPlus, Version 22.2.0-5bf40e124b (No OpenGL) (No OpenGL) (No OpenGL), YMD=2022.10.11 14:52,
    ** Warning ** Output:PreprocessorMessage="GroundTempCalc - Slab" has the following Warning condition:
    **   ~~~   ** Slab thickness [0.100 m] reset to 0.123 m  for computational stability.
    ** Warning ** Timestep: Requested number (12) cannot be used when Conduction Finite Difference algorithm is selected.
@@ -19,4 +19,4 @@ Program Version,EnergyPlus, Version 22.2.0-7ff1ca9a23, YMD=2022.10.10 21:05,
    ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 2 Warning; 1 Severe Errors.
-   ************* EnergyPlus Terminated--Fatal Error Detected. 4 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  3.73sec
+   ************* EnergyPlus Terminated--Fatal Error Detected. 4 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  2.58sec

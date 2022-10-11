@@ -61,6 +61,7 @@ namespace HysteresisPhaseChange {
 
     HysteresisPhaseChange *HysteresisPhaseChange::factory(EnergyPlusData &state, const std::string &objectName)
     {
+
         if (state.dataHysteresisPhaseChange->getHysteresisModels) {
             readAllHysteresisModels(state);
             state.dataHysteresisPhaseChange->getHysteresisModels = false;
@@ -378,7 +379,10 @@ namespace HysteresisPhaseChange {
             thisHM.deltaTempFreezingLow = state.dataIPShortCut->rNumericArgs(13);
             thisHM.specHeatTransition = (thisHM.specificHeatSolid + thisHM.specificHeatLiquid) / 2.0;
             thisHM.CpOld = thisHM.specificHeatSolid;
+            thisHM.
             state.dataHysteresisPhaseChange->hysteresisPhaseChangeModels.push_back(thisHM);
+
+                    std::cout << state.dataMaterial->Material(state.dataConstruction->Construct(ConstrNum).LayerPoint(1)).Group == DataHeatBalance::MaterialGroup::HysteresisPhaseChange
         }
     }
 

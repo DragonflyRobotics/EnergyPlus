@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-7ff1ca9a23, YMD=2022.10.10 21:05
+Program Version,EnergyPlus, Version 22.2.0-5bf40e124b (No OpenGL) (No OpenGL) (No OpenGL), YMD=2022.10.11 14:52
 1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
 2,8,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
 3,5,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested

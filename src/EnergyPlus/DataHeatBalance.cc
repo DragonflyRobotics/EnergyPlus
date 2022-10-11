@@ -321,6 +321,7 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             case DataHeatBalance::MaterialGroup::ScreenEquivalentLayer:
             case DataHeatBalance::MaterialGroup::BlindEquivalentLayer:
             case DataHeatBalance::MaterialGroup::GapEquivalentLayer:
+            case DataHeatBalance::MaterialGroup::HysteresisPhaseChange:
                 break; // everything is OK
             default:
                 WrongMaterialsMix = true; // found a bad one
