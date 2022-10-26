@@ -2673,12 +2673,13 @@ Construction,
 
 Construction,
     Exterior Window,         !- Name
-    Glass;                   !- Outside Layer
+    Glass,                   !- Outside Layer
+    EnKoat;                  !- Layer 2
 
 Construction,
     Interior Window,         !- Name
     Glass;                   !- Outside Layer
-    !- EnKoat;                  Layer 2
+    !- EnKoat;                  !- Layer 2
 
 Construction,
     Exterior Door,           !- Name
