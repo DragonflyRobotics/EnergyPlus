@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-5720e6592d, YMD=2022.10.12 18:40
+Program Version,EnergyPlus, Version 22.2.0-2f79ac8c85, YMD=2022.10.19 20:15
 ! <Version>, Version ID
  Version, 22.2
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
