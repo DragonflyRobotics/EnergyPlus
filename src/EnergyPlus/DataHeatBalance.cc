@@ -62,6 +62,8 @@
 #include <EnergyPlus/Material.hh>
 #include <EnergyPlus/UtilityRoutines.hh>
 
+
+
 namespace EnergyPlus::DataHeatBalance {
 
 // MODULE INFORMATION:
@@ -321,10 +323,15 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             case DataHeatBalance::MaterialGroup::ScreenEquivalentLayer:
             case DataHeatBalance::MaterialGroup::BlindEquivalentLayer:
             case DataHeatBalance::MaterialGroup::GapEquivalentLayer:
-            case DataHeatBalance::MaterialGroup::HysteresisPhaseChange:
+            case DataHeatBalance::MaterialGroup::HysteresisPhaseChange: // unused for now
                 break; // everything is OK
             default:
-                WrongMaterialsMix = true; // found a bad one
+                if (state.dataConstruction->Construct(ConstrNum).TypeIsWindow == 1) {
+                    WrongMaterialsMix = false;
+                }
+                else {
+                    WrongMaterialsMix = true; // found a bad one
+                }
             }
         }
 
