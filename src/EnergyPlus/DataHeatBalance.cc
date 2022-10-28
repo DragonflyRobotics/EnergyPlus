@@ -307,6 +307,11 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
         for (Layer = 1; Layer <= TotLayers; ++Layer) {
             MaterNum = state.dataConstruction->Construct(ConstrNum).LayerPoint(Layer);
             if (MaterNum == 0) continue; // error -- has been caught will stop program later
+            if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
+                std::cout << "Enkoat found! ===========================================" << "\n";
+                state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::HysteresisPhaseChange;
+            }
+
             switch (state.dataMaterial->Material(MaterNum).Group) {
             case DataHeatBalance::MaterialGroup::WindowGlass:
             case DataHeatBalance::MaterialGroup::WindowGas:
@@ -326,12 +331,13 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             case DataHeatBalance::MaterialGroup::HysteresisPhaseChange: // unused for now
                 break; // everything is OK
             default:
-                if (state.dataConstruction->Construct(ConstrNum).TypeIsWindow == 1) {
-                    WrongMaterialsMix = false;
-                }
-                else {
-                    WrongMaterialsMix = true; // found a bad one
-                }
+//                if (state.dataConstruction->Construct(ConstrNum).TypeIsWindow == 1) {
+//                    WrongMaterialsMix = false;
+//                }
+//                else {
+//                    WrongMaterialsMix = true; // found a bad one
+//                }
+                WrongMaterialsMix = true; // found a bad one
             }
         }
 
