@@ -246,7 +246,12 @@ namespace HeatBalFiniteDiffManager {
                     ShowSevereError(state,
                                     cCurrentModuleObject + ": Reference Material is not appropriate type for CondFD properties, material=" +
                                         state.dataMaterial->Material(MaterNum).Name + ", must have regular properties (L,Cp,K,D)");
+                    std::cout << "Me gusta las problemas!!!";
+                    std::cout << (state.dataMaterial->Material(MaterNum).Group==DataHeatBalance::MaterialGroup::HysteresisPhaseChange);
                     ErrorsFound = true;
+                    if(state.dataMaterial->Material(MaterNum).Group == DataHeatBalance::MaterialGroup::HysteresisPhaseChange) {
+                        ErrorsFound = false;
+                    }
                 }
 
                 // Once the material derived type number is found then load the additional CondFD variable material properties
@@ -337,11 +342,16 @@ namespace HeatBalFiniteDiffManager {
                     continue;
                 }
 
-                if (state.dataMaterial->Material(MaterNum).Group != DataHeatBalance::MaterialGroup::RegularMaterial) {
+                if (state.dataMaterial->Material(MaterNum).Group != DataHeatBalance::MaterialGroup::RegularMaterial)  {
                     ShowSevereError(state,
                                     cCurrentModuleObject + ": Reference Material is not appropriate type for CondFD properties, material=" +
                                         state.dataMaterial->Material(MaterNum).Name + ", must have regular properties (L,Cp,K,D)");
+                    std::cout << "Me gusta las problemas!!!";
+                    std::cout << (state.dataMaterial->Material(MaterNum).Group==DataHeatBalance::MaterialGroup::HysteresisPhaseChange);
                     ErrorsFound = true;
+                    if(state.dataMaterial->Material(MaterNum).Group == DataHeatBalance::MaterialGroup::HysteresisPhaseChange) {
+                        ErrorsFound = false;
+                    }
                 }
 
                 // Once the material derived type number is found then load the additional CondFD variable material properties
