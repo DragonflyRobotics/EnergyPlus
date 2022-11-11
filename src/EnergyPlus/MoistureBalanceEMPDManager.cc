@@ -208,10 +208,12 @@ void GetMoistureBalanceEMPDInput(EnergyPlusData &state)
 
         // See if Material was defined with R only.  (No density is defined then and not applicable for EMPD).
         //  What about materials other than "regular materials" (e.g. Glass, Air, etc)
+        std::cout << "REACHED MOISTURE";
         if (state.dataMaterial->Material(MaterNum).Group == DataHeatBalance::MaterialGroup::RegularMaterial && MaterialProps(1) > 0.0) {
             if (state.dataMaterial->Material(MaterNum).ROnly) {
                 //        CALL ShowSevereError('EMPD base material = "'//TRIM(dataMaterial.Material(MaterNum)%Name)//  &
                 //                             '" was Material:NoMass. It cannot be used for EMPD calculations.')
+                std::cout << "=============MOISTURE BALANCE FOUND!!!!!!!!!!!!!!!!!!!!!!!111111111111 \n";
                 ShowContinueError(state, "..Only Material base materials are allowed to have EMPD properties.");
                 ShowSevereError(state,
                                 cCurrentModuleObject + ": Reference Material is not appropriate type for EMPD properties, material=" +
@@ -222,6 +224,7 @@ void GetMoistureBalanceEMPDInput(EnergyPlusData &state)
         if (state.dataMaterial->Material(MaterNum).Group != DataHeatBalance::MaterialGroup::RegularMaterial) {
             //      CALL ShowSevereError('GetMoistureBalanceEMPDInput: Only Material:Regular base materials are allowed '// &
             //                           'to have EMPD properties, material = '// TRIM(dataMaterial.Material(MaterNum)%Name))
+            std::cout << "=============MOISTURE BALANCE FOUND!!!!!!!!!!!!!!!!!!!!!!!2222222222222222222 \n";
             ShowSevereError(state,
                             cCurrentModuleObject + ": Reference Material is not appropriate type for EMPD properties, material=" +
                                 state.dataMaterial->Material(MaterNum).Name + ", must have regular properties (L,Cp,K,D)");
