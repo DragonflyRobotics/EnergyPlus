@@ -329,6 +329,7 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             case DataHeatBalance::MaterialGroup::BlindEquivalentLayer:
             case DataHeatBalance::MaterialGroup::GapEquivalentLayer:
             case DataHeatBalance::MaterialGroup::HysteresisPhaseChange: // unused for now
+//                state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::RegularMaterial;
                 break; // everything is OK
             default:
 //                if (state.dataConstruction->Construct(ConstrNum).TypeIsWindow == 1) {
@@ -338,6 +339,10 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
 //                    WrongMaterialsMix = true; // found a bad one
 //                }
                 WrongMaterialsMix = true; // found a bad one
+            }
+            if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
+                std::cout << "Enkoat found! ===========================================" << "\n";
+                state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::RegularMaterial;
             }
         }
 
