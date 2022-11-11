@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-f1152d5013, YMD=2022.10.27 20:49,
+Program Version,EnergyPlus, Version 22.2.0-e09063c5d2, YMD=2022.11.10 21:26,
    ** Warning ** Output:PreprocessorMessage="GroundTempCalc - Slab" has the following Warning condition:
    **   ~~~   ** Slab thickness [0.100 m] reset to 0.123 m  for computational stability.
    ** Warning ** Timestep: Requested number (12) cannot be used when Conduction Finite Difference algorithm is selected.
@@ -13,7 +13,6 @@ Program Version,EnergyPlus, Version 22.2.0-f1152d5013, YMD=2022.10.27 20:49,
    ** Warning ** CalculateZoneVolume: 1 zone is not fully enclosed. For more details use:  Output:Diagnostics,DisplayExtrawarnings; 
    ** Warning ** CheckUsedConstructions: There are 17 nominally unused constructions in input.
    **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
-   ** Severe  ** MaterialProperty:PhaseChange: Reference Material is not appropriate type for CondFD properties, material=ENKOAT, must have regular properties (L,Cp,K,D)
    ************* Beginning System Sizing Calculations
    ** Warning ** The Standard Ratings is calculated for Coil:Cooling:DX:SingleSpeed = DX COOLING COIL_UNIT1 but not at the AHRI test condition due to curve out of bound.
    **   ~~~   **  Review the Standard Ratings calculations in the Engineering Reference for this coil type. Also, use Output:Diagnostics, DisplayExtraWarnings for further guidance.
@@ -158,5 +157,5 @@ Program Version,EnergyPlus, Version 22.2.0-f1152d5013, YMD=2022.10.27 20:49,
    ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Sizing Error Summary. During Sizing: 4 Warning; 1 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 2818658 Warning; 1 Severe Errors; Elapsed Time=00hr 25min 40.40sec
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 4 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 2818658 Warning; 0 Severe Errors; Elapsed Time=00hr 20min 50.16sec
