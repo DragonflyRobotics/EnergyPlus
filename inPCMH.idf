@@ -2594,6 +2594,25 @@ MaterialProperty:PhaseChange,
     109523;                  !- Enthalpy 15 {J/kg}
 
 
+!-   ===========  ALL OBJECTS IN CLASS: MATERIALPROPERTY:PHASECHANGEHYSTERESIS ===========
+
+MaterialProperty:PhaseChangeHysteresis,
+    EnKoat,                  !- Name
+    334000,                  !- Latent Heat during the Entire Phase Change Process {J/kg}
+    0.598,                   !- Liquid State Thermal Conductivity {W/m-K}
+    997,                     !- Liquid State Density {kg/m3}
+    4179,                    !- Liquid State Specific Heat {J/kg-K}
+    21,                      !- High Temperature Difference of Melting Curve {deltaC}
+    100,                     !- Peak Melting Temperature {C}
+    21,                      !- Low Temperature Difference of Melting Curve {deltaC}
+    2.43,                    !- Solid State Thermal Conductivity {W/m-K}
+    0.917,                   !- Solid State Density {kg/m3}
+    2108,                    !- Solid State Specific Heat {J/kg-K}
+    80,                      !- High Temperature Difference of Freezing Curve {deltaC}
+    0.01,                    !- Peak Freezing Temperature {C}
+    80;                      !- Low Temperature Difference of Freezing Curve {deltaC}
+
+
 !-   ===========  ALL OBJECTS IN CLASS: CONSTRUCTION ===========
 
 Construction,
@@ -2677,7 +2696,8 @@ Construction,
 
 Construction,
     Interior Window,         !- Name
-    Glass;                   !- Outside Layer
+    Glass,                   !- Outside Layer
+    EnKoat;
 
 Construction,
     Exterior Door,           !- Name
