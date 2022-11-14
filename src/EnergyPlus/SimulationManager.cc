@@ -386,6 +386,17 @@ namespace SimulationManager {
             SimsDone = true;
             DisplayString(state, "Initializing New Environment Parameters");
 
+//            ============================================================================
+            int TotLayers = state.dataConstruction->Construct(state.dataHeatBal->TotConstructs).TotLayers;
+            std::cout << TotLayers << "\n";
+
+            for (int Layer = 1; Layer <= TotLayers; ++Layer) {
+                int MaterNum = state.dataConstruction->Construct(TotLayers).LayerPoint(Layer);
+                std::cout << MaterNum << "\n";
+                DisplayString(state, fmt::to_string(state.dataMaterial->Material(MaterNum).Name));
+            }
+
+
             state.dataGlobal->BeginEnvrnFlag = true;
             state.dataGlobal->EndEnvrnFlag = false;
             state.dataEnvrn->EndMonthFlag = false;

@@ -306,6 +306,8 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
         WrongWindowLayering = false;
         for (Layer = 1; Layer <= TotLayers; ++Layer) {
             MaterNum = state.dataConstruction->Construct(ConstrNum).LayerPoint(Layer);
+            std::cout << "ConstNum: " << ConstrNum << "\n";
+            std::cout << "Layer: " << Layer << "\n";
             if (MaterNum == 0) continue; // error -- has been caught will stop program later
             if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
                 std::cout << "Enkoat found! ===========================================" << "\n";
