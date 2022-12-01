@@ -91,6 +91,8 @@ namespace WindowManager {
             aModel->m_Model = aParser.StringToEnum(state, state.dataIPShortCut->cAlphaArgs(1));
         }
 
+        std::cout << "WindowModel: " << objectName << "\n";
+
         return aModel;
     }
 

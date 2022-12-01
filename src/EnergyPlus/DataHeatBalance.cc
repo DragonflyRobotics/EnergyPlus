@@ -308,8 +308,9 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             MaterNum = state.dataConstruction->Construct(ConstrNum).LayerPoint(Layer);
             std::cout << "ConstNum: " << ConstrNum << "\n";
             std::cout << "Layer: " << Layer << "\n";
+            std::cout << "Name: " << state.dataMaterial->Material(MaterNum).Name << "\n";
             if (MaterNum == 0) continue; // error -- has been caught will stop program later
-            if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
+            if (state.dataMaterial->Material(MaterNum).Name == "DRYWALL_1/2IN") {
                 std::cout << "Enkoat found! ===========================================" << "\n";
                 state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::HysteresisPhaseChange;
             }
@@ -342,7 +343,7 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
 //                }
                 WrongMaterialsMix = true; // found a bad one
             }
-            if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
+            if (state.dataMaterial->Material(MaterNum).Name == "DRYWALL_1/2IN") {
                 std::cout << "Enkoat found! ===========================================" << "\n";
                 state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::RegularMaterial;
             }
