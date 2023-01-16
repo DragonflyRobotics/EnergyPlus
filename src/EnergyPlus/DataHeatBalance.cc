@@ -47,6 +47,8 @@
 
 // C++ Headers
 #include <cmath>
+#include <stdio.h>
+#include <stddef.h>
 
 // ObjexxFCL Headers
 #include <ObjexxFCL/Array.functions.hh>
@@ -303,6 +305,8 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
         WrongWindowLayering = false;
         for (Layer = 1; Layer <= TotLayers; ++Layer) {
             MaterNum = state.dataConstruction->Construct(ConstrNum).LayerPoint(Layer);
+            std::cout << state.dataMaterial->Material(MaterNum).Name;
+            
             if (MaterNum == 0) continue; // error -- has been caught will stop program later
             switch (state.dataMaterial->Material(MaterNum).Group) {
             case DataHeatBalance::MaterialGroup::WindowGlass:

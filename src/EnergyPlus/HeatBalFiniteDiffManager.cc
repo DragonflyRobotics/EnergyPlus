@@ -242,6 +242,7 @@ namespace HeatBalFiniteDiffManager {
                     continue;
                 }
 
+
                 if (state.dataMaterial->Material(MaterNum).Group != DataHeatBalance::MaterialGroup::RegularMaterial) {
                     ShowSevereError(state,
                                     cCurrentModuleObject + ": Reference Material is not appropriate type for CondFD properties, material=" +

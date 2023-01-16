@@ -104,6 +104,8 @@ namespace HysteresisPhaseChange {
         Real64 TempHighPCF = this->peakTempFreezing + this->deltaTempFreezingHigh;
         Real64 Cp;
         Real64 phaseChangeDeltaT = prevTempTD - updatedTempTDT;
+        this->group = "PCM";
+        this->name = "YoFace";
 
         // determine phase change state and curve characteristics based on delta T direction, updated temp, and previous state
         if (phaseChangeDeltaT <= 0) {
