@@ -310,7 +310,7 @@ void CheckAndSetConstructionProperties(EnergyPlusData &state,
             std::cout << "Layer: " << Layer << "\n";
             std::cout << "Name: " << state.dataMaterial->Material(MaterNum).Name << "\n";
             if (MaterNum == 0) continue; // error -- has been caught will stop program later
-            if (state.dataMaterial->Material(MaterNum).Name == "DRYWALL_1/2IN") {
+            if (state.dataMaterial->Material(MaterNum).Name == "ENKOAT") {
                 std::cout << "Enkoat found! ===========================================" << "\n";
                 state.dataMaterial->Material(MaterNum).Group = DataHeatBalance::MaterialGroup::HysteresisPhaseChange;
             }
