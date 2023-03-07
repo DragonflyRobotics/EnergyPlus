@@ -45,11 +45,31 @@
 // OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#include <EnergyPlus/api/EnergyPlusPgm.hh>
-#include <iostream>
+//#include <EnergyPlus/api/EnergyPlusPgm.hh>
+//#include <iostream>
+//
+//int main(int argc, const char *argv[])
+//{
+//    std::cout << "What is up Krishna? This E+ talking back to you during simulation. HOW COOL IS THAT!";
+//    return EnergyPlusPgm(argc, argv);
+//}
 
-int main(int argc, const char *argv[])
-{
-    std::cout << "What is up Krishna? This E+ talking back to you during simulation. HOW COOL IS THAT!";
-    return EnergyPlusPgm(argc, argv);
+#include <EnergyPlus/api/func.h>
+#include <EnergyPlus/api/state.h>
+
+int main(int argc, const char * argv[]) {
+    EnergyPlusState state = stateNew();
+    initializeFunctionalAPI(state);
+
+    Glycol glycol = NULL;
+    glycol = glycolNew(state, "W");
+    Real64 specificHeat = glycolSpecificHeat(state, glycol, 35.0);
+    glycolDelete(state, glycol);
+
+    Refrigerant refrig = NULL;
+    refrig = refrigerantNew(state, "S");
+    Real64 satPress = refrigerantSaturationPressure(state, refrig, 100.0);
+    refrigerantDelete(state, refrig);
+
+    Real64 rh = psyRhFnTdbWPb(state, 24, 0.009, 101325); // psychrometrics are evaluated directly
 }
